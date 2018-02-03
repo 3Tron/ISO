@@ -1,18 +1,9 @@
-import cv2
-import numpy
+
 import PIL.Image as Image
 import PIL.ImageDraw as ImageDraw
 import sys
-
 from os import listdir
 from os.path import isfile, join
-
-
-def is_greenish0(clr):
-    r, g, ba = clr
-    if (g > r and g > b):
-        return True
-    return False
 
 
 def is_greenish(clr, level=-1):
@@ -20,13 +11,6 @@ def is_greenish(clr, level=-1):
     if (g > r and g > b):
         return True
     return False
-
-
-def get_avg(f):
-    myimg = cv2.imread(f)
-    avg_color_per_row = numpy.average(myimg, axis=0)
-    avg_color = numpy.average(avg_color_per_row, axis=0)
-    print(f, avg_color, is_greenish(avg_color))
 
 
 def find_fielding(infile, outfile, numcolors=5, swatchsize=20, resize=96):
@@ -61,8 +45,8 @@ def find_fielding(infile, outfile, numcolors=5, swatchsize=20, resize=96):
 
 
 def main():
-    for arg in sys.argv[1:]:
-        print(arg)
+    # for arg in sys.argv[1:]:
+    #    print(arg)
 
     mypath = sys.argv[1]
 
