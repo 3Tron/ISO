@@ -32,7 +32,7 @@ def find_fielding(infile, outfile, numcolors=5, swatchsize=20, resize=96):
     if greenscore > 3:
         pal = Image.new('RGB', (swatchsize * numcolors, swatchsize * 3))
         draw = ImageDraw.Draw(pal)
-        get_avg(infile)
+        #get_avg(infile)
 
         posx = 0
         for count, col in colors:
