@@ -55,11 +55,12 @@ def main():
     mypath = sys.argv[1]
     ff = FindFields()
     if isfile(mypath):
-        ff.find_fielding(f, f + 'out.png')
+        ff.find_fielding(mypath, mypath + 'out.png')
     else:
         onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
         for f in onlyfiles:
             if 'out' not in f:
+                print(f)
                 ff.find_fielding(f, f + 'out.png')
 
 
